@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:breakingbad/charactersrepository.dart';
+import 'package:breakingbad/data/repositories/charactersrepository.dart';
 import 'package:meta/meta.dart';
 
-import 'characters.dart';
+import '../data/models/characters_model.dart';
 
 part 'characters_state.dart';
 

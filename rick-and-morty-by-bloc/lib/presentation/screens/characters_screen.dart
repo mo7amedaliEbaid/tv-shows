@@ -1,9 +1,10 @@
-import 'package:breakingbad/character_item.dart';
-import 'package:breakingbad/characters_cubit.dart';
+import 'package:breakingbad/business-logic/characters_cubit.dart';
+import 'package:breakingbad/presentation/widgets/character_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_offline/flutter_offline.dart';
 
-import 'characters.dart';
+import '../../data/models/characters_model.dart';
 
 class CharactersScreen extends StatefulWidget {
   const CharactersScreen({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
   late List<Character> searchedForCharacters;
   bool _isSearching = false;
   final _searchTextController = TextEditingController();
+
   Widget _buildSearchField() {
     return TextField(
       controller: _searchTextController,
@@ -40,15 +42,24 @@ class _CharactersScreenState extends State<CharactersScreen> {
   List<Widget> buildAppBarrActions() {
     if (_isSearching) {
       return [
-        IconButton(onPressed: () {
-          _clearSearch();
-          Navigator.pop(context);
-        }, icon: Icon(Icons.clear)),
+        IconButton(
+            onPressed: () {
+              _clearSearch();
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.clear,
+              color: Colors.black,
+            )),
       ];
-    }else{
-      return[
-        IconButton(onPressed: _startsearch
-        , icon: Icon(Icons.search))
+    } else {
+      return [
+        IconButton(
+            onPressed: _startsearch,
+            icon: Icon(
+              Icons.search,
+              color: Colors.black,
+            ))
       ];
     }
   }
@@ -83,13 +94,10 @@ class _CharactersScreenState extends State<CharactersScreen> {
 
   Widget buildLoadedListWidgets() {
     return SingleChildScrollView(
-      child: Container(
-        color: Colors.grey,
-        child: Column(
-          children: [
-            buildCharactersList(),
-          ],
-        ),
+      child: Column(
+        children: [
+          buildCharactersList(),
+        ],
       ),
     );
   }
@@ -105,56 +113,81 @@ class _CharactersScreenState extends State<CharactersScreen> {
         shrinkWrap: true,
         physics: const ClampingScrollPhysics(),
         padding: EdgeInsets.zero,
-        itemCount: _searchTextController.text.isEmpty? allCharacters.length : searchedForCharacters.length,
+        itemCount: _searchTextController.text.isEmpty
+            ? allCharacters.length
+            : searchedForCharacters.length,
         itemBuilder: (context, index) {
           return CharacterItem(
-            character:_searchTextController.text.isEmpty? allCharacters[index]:searchedForCharacters[index],
+            character: _searchTextController.text.isEmpty
+                ? allCharacters[index]
+                : searchedForCharacters[index],
           );
         });
   }
-Widget _buildAppBarrTitle(){
+
+  Widget _buildAppBarrTitle() {
     return Text(
       'Characters',
       style: TextStyle(
-        color: Colors.grey,
+        color: Colors.black,
       ),
     );
-}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         backgroundColor: Colors.yellow,
         centerTitle: true,
-        title: _isSearching? _buildSearchField():_buildAppBarrTitle(),
+        title: _isSearching ? _buildSearchField() : _buildAppBarrTitle(),
         actions: buildAppBarrActions(),
       ),
-      body: buildBlocWidget(),
+      body: OfflineBuilder(connectivityBuilder: (
+        BuildContext context,
+        ConnectivityResult connectivity,
+        Widget child,
+      ) {
+        final bool connected = connectivity != ConnectivityResult.none;
+        if(connected){
+          return buildBlocWidget();
+        }else{
+        return Center(
+          child: Column(
+            children: [
+              Icon(Icons.signal_wifi_statusbar_connected_no_internet_4_sharp,size: 60,color: Colors.red,),
+              Text("Please Check Your Internet Connection")
+            ],
+          ),
+        );
+        }
+      },
+      child: Center(child: CircularProgressIndicator(),),),
+
+
     );
   }
 
   void addSearchedForItemsToSearchedList(String searchedCharacter) {
     searchedForCharacters = allCharacters
         .where((character) =>
-        character.name!.toLowerCase().startsWith(searchedCharacter))
+            character.name!.toLowerCase().startsWith(searchedCharacter))
         .toList();
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   void _startsearch() {
-    ModalRoute.of(context)!.addLocalHistoryEntry(LocalHistoryEntry(onRemove:_stopSearching ));
+    ModalRoute.of(context)!
+        .addLocalHistoryEntry(LocalHistoryEntry(onRemove: _stopSearching));
     setState(() {
-      _isSearching=true;
+      _isSearching = true;
     });
   }
 
   void _stopSearching() {
     _clearSearch();
     setState(() {
-      _isSearching=false;
+      _isSearching = false;
     });
   }
 
@@ -164,4 +197,3 @@ Widget _buildAppBarrTitle(){
     });
   }
 }
-

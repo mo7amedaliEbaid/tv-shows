@@ -1,6 +1,6 @@
-import 'package:breakingbad/charactersWebServices.dart';
+import 'package:breakingbad/data/web_services/charactersWebServices.dart';
 
-import 'characters.dart';
+import '../models/characters_model.dart';
 
 class CharactersRepository{
   final CharactersWebServices charactersWebServices;
