@@ -1,4 +1,4 @@
-class Character {
+class RAMCharacter {
   int? id;
   String? name;
   String? status;
@@ -12,21 +12,21 @@ class Character {
   String? url;
   String? created;
 
-  Character(
+  RAMCharacter(
       {this.id,
-        this.name,
-        this.status,
-        this.species,
-        this.type,
-        this.gender,
-        this.origin,
-        this.location,
-        this.image,
-        this.episode,
-        this.url,
-        this.created});
+      this.name,
+      this.status,
+      this.species,
+      this.type,
+      this.gender,
+      this.origin,
+      this.location,
+      this.image,
+      this.episode,
+      this.url,
+      this.created});
 
-  Character.fromJson(Map<String, dynamic> json) {
+  RAMCharacter.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     status = json['status'];
@@ -34,9 +34,9 @@ class Character {
     type = json['type'];
     gender = json['gender'];
     origin =
-    json['origin'] != null ? new Origin.fromJson(json['origin']) : null;
+        json['origin'] != null ? new Origin.fromJson(json['origin']) : null;
     location =
-    json['location'] != null ? new Origin.fromJson(json['location']) : null;
+        json['location'] != null ? new Origin.fromJson(json['location']) : null;
     image = json['image'];
     episode = json['episode'].cast<String>();
     url = json['url'];

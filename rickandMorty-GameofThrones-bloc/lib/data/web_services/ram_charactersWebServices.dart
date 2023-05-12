@@ -1,20 +1,20 @@
 import 'package:breakingbad/constants/constants.dart';
 import 'package:dio/dio.dart';
 
-class CharactersWebServices{
-late Dio dio;
-CharactersWebServices(){
+class RAMCharactersWebServices{
+ Dio dio=Dio();
+RAMCharactersWebServices(){
   BaseOptions options =BaseOptions(
-    baseUrl: baseurl,
+    baseUrl: RAMbaseurl,
     receiveDataWhenStatusError: true,
     connectTimeout: 20*1000,
     receiveTimeout: 20*1000,
   );
   dio=Dio(options);
 }
-Future<List<dynamic>> getAllCharacters()async{
+Future<List<dynamic>> getAllRAMCharacters()async{
   try{
-    Response response= await dio.get('character');
+    Response response= await dio.get(allRAMcharacters);
     print(response.data.toString());
     return response.data["results"];
   }catch(e){

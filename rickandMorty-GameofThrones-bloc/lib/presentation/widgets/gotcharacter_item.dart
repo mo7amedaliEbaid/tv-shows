@@ -1,11 +1,12 @@
-import 'package:breakingbad/constants/constants.dart';
-import 'package:breakingbad/data/models/characters_model.dart';
+import 'package:breakingbad/data/models/got_character_model.dart';
+import 'package:breakingbad/presentation/screens/got_character_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CharacterItem extends StatelessWidget {
-  final Character character;
-  const CharacterItem({Key? key, required this.character}) : super(key: key);
+class GotCharacterItem extends StatelessWidget {
+  final GOTCharacter character;
+
+  const GotCharacterItem({Key? key, required this.character}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,11 @@ class CharacterItem extends StatelessWidget {
       ),
       child: GridTile(
         child: InkWell(
-          onTap: ()=>Navigator.pushNamed(context, charactersDetailsScreen,arguments: character),
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    GotCharactersDetailsScreen(gotcharacter: character)));
+          },
           child: Hero(
             tag: character.id as Object,
             child: Container(
@@ -30,7 +35,7 @@ class CharacterItem extends StatelessWidget {
                       height: double.infinity,
                       placeholder: 'images/loading.jpg',
                       alignment: Alignment.center,
-                      image: character.image.toString(),
+                      image: character.imageUrl.toString(),
                       fit: BoxFit.cover,
                     )
                   : Image.asset('images/cairo.jpeg'),
@@ -43,13 +48,12 @@ class CharacterItem extends StatelessWidget {
           color: Colors.black54,
           alignment: Alignment.topCenter,
           child: Text(
-            character.name!,
+            character.fullName!,
             style: TextStyle(
-              height: 1.3,
-              fontSize: 16,
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-            ),
+                height: 1.3,
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             textAlign: TextAlign.center,

@@ -1,30 +1,92 @@
-import 'package:breakingbad/business-logic/characters_cubit.dart';
-import 'package:breakingbad/presentation/widgets/character_item.dart';
+import 'package:breakingbad/business-logic/ram_characters_cubit.dart';
+import 'package:breakingbad/presentation/widgets/ramcharacter_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 
-import '../../data/models/characters_model.dart';
+import '../../constants/constants.dart';
+import '../../data/models/ram_characters_model.dart';
+import '../widgets/appbar_title.dart';
+import '../widgets/loading.dart';
 
-class CharactersScreen extends StatefulWidget {
-  const CharactersScreen({Key? key}) : super(key: key);
+class RAMCharactersScreen extends StatefulWidget {
+  const RAMCharactersScreen({Key? key}) : super(key: key);
 
   @override
-  State<CharactersScreen> createState() => _CharactersScreenState();
+  State<RAMCharactersScreen> createState() => _RAMCharactersScreenState();
 }
 
-class _CharactersScreenState extends State<CharactersScreen> {
-  late List<Character> allCharacters;
-  late List<Character> searchedForCharacters;
+class _RAMCharactersScreenState extends State<RAMCharactersScreen> {
+  late List<RAMCharacter> allCharacters;
+  late List<RAMCharacter> searchedForCharacters;
   bool _isSearching = false;
   final _searchTextController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<RAMCharactersCubit>(context).getAllRAMCharacters();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.yellow,
+        centerTitle: true,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, GOTcharactersScreen);
+          },
+          child: Container(
+            margin: EdgeInsets.fromLTRB(10, 2, 0, 2),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/got.jpeg"), fit: BoxFit.fill)),
+          ),
+        ),
+        title: _isSearching
+            ? _buildSearchField()
+            : buildAppBarrTitle("Rick and Morty"),
+        actions: buildAppBarrActions(),
+      ),
+      body: OfflineBuilder(
+        connectivityBuilder: (
+          BuildContext context,
+          ConnectivityResult connectivity,
+          Widget child,
+        ) {
+          final bool connected = connectivity != ConnectivityResult.none;
+          if (connected) {
+            return buildBlocWidget();
+          } else {
+            return Center(
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.signal_wifi_statusbar_connected_no_internet_4_sharp,
+                    size: 60,
+                    color: Colors.red,
+                  ),
+                  Text("Please Check Your Internet Connection")
+                ],
+              ),
+            );
+          }
+        },
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
 
   Widget _buildSearchField() {
     return TextField(
       controller: _searchTextController,
       cursorColor: Colors.cyan,
       decoration: InputDecoration(
-        hintText: 'Find a character',
+        hintText: 'Find Ricky and Morty character',
         border: InputBorder.none,
         hintStyle: TextStyle(
           color: Colors.red,
@@ -64,32 +126,16 @@ class _CharactersScreenState extends State<CharactersScreen> {
     }
   }
 
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<CharactersCubit>(context).getAllCharacters();
-  }
-
   Widget buildBlocWidget() {
-    return BlocBuilder<CharactersCubit, CharactersState>(
+    return BlocBuilder<RAMCharactersCubit, RAMCharactersState>(
         builder: (context, state) {
-      if (state is Charactersloaded) {
-        allCharacters = (state).characters;
+      if (state is RAMCharactersloaded) {
+        allCharacters = (state).ramcharacters;
         return buildLoadedListWidgets();
       } else {
         return showLoadingIndicator();
       }
     });
-  }
-
-  Widget showLoadingIndicator() {
-    return Center(
-      child: Container(
-        child: CircularProgressIndicator(
-          color: Colors.yellow,
-        ),
-      ),
-    );
   }
 
   Widget buildLoadedListWidgets() {
@@ -117,55 +163,12 @@ class _CharactersScreenState extends State<CharactersScreen> {
             ? allCharacters.length
             : searchedForCharacters.length,
         itemBuilder: (context, index) {
-          return CharacterItem(
+          return RAMCharacterItem(
             character: _searchTextController.text.isEmpty
                 ? allCharacters[index]
                 : searchedForCharacters[index],
           );
         });
-  }
-
-  Widget _buildAppBarrTitle() {
-    return Text(
-      'Characters',
-      style: TextStyle(
-        color: Colors.black,
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.yellow,
-        centerTitle: true,
-        title: _isSearching ? _buildSearchField() : _buildAppBarrTitle(),
-        actions: buildAppBarrActions(),
-      ),
-      body: OfflineBuilder(connectivityBuilder: (
-        BuildContext context,
-        ConnectivityResult connectivity,
-        Widget child,
-      ) {
-        final bool connected = connectivity != ConnectivityResult.none;
-        if(connected){
-          return buildBlocWidget();
-        }else{
-        return Center(
-          child: Column(
-            children: [
-              Icon(Icons.signal_wifi_statusbar_connected_no_internet_4_sharp,size: 60,color: Colors.red,),
-              Text("Please Check Your Internet Connection")
-            ],
-          ),
-        );
-        }
-      },
-      child: Center(child: CircularProgressIndicator(),),),
-
-
-    );
   }
 
   void addSearchedForItemsToSearchedList(String searchedCharacter) {

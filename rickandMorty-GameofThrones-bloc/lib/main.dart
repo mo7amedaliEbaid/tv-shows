@@ -1,13 +1,17 @@
 import 'package:breakingbad/router.dart';
 import 'package:flutter/material.dart';
+
 void main() {
-  runApp(MortyApp(appRouter: AppRouter(),));
+  runApp(MyApp(
+    appRouter: AppRouter(),
+  ));
 }
 
-class MortyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   final AppRouter appRouter;
 
-  const MortyApp({super.key, required this.appRouter});
+  const MyApp({super.key, required this.appRouter});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,4 +20,3 @@ class MortyApp extends StatelessWidget {
     );
   }
 }
-
