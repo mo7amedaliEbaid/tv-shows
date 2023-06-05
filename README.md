@@ -1,32 +1,26 @@
 # TV Shows.
-A Flutter app for( rick and morty) and (game of thrones) series,  
-you can browse and search characters,   
-based on free apis ,   
-I used cubit,blocprovider and flutter_offline package.
+A Flutter app for( rick and morty) and (game of thrones) characters
 
+### State management
+- Cubit
 
-## For An Apk.
- 
- https://drive.google.com/drive/folders/1hIjvxJRVjdr-YqEmnQKGuHPVjJAXe_So  
- 
+### Used Packages.
+- dio:   
+- flutter_bloc:     
+- flutter_offline:   
+   
+### ScreenShots.
 
-## Used Packages.
-  dio:   
-  flutter_bloc:     
-  flutter_offline:   
-  
-  ## ScreenShots.
-  
-
-  
-  
-  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/offline_wide.jpg?width=200)
+Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/tv-shows/blob/e47c681f550db849efd61e25892c924762cbcfe1/rickandMorty-GameofThrones-bloc/screen_shots)
+<br />
+<p float="left">
+<img src="" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/got.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/search.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/char3.jpg" width="170" />
+</p>
   
   
- ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/char3.jpg?raw=true)
-  
-  
-  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/search.jpg?raw=true)      
   
 
   
