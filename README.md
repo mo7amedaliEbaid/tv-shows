@@ -13,11 +13,13 @@ I used cubit ,blocprovider,flutter_offline packages
   ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/got.jpg?raw=true)
   
   
-  ![alt text](https://github.com/mo7amedaliEbaid/movies_app_flutter/blob/master/screen_shots/genres.png?raw=true)
+  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/offline_wide.jpg?raw=true)
   
   
-  ![alt text](https://github.com/mo7amedaliEbaid/movies_app_flutter/blob/master/screen_shots/movie_details1.png?raw=true)
+ ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/char3.jpg?raw=true)
   
   
-  ![alt text](https://github.com/mo7amedaliEbaid/movies_app_flutter/blob/master/screen_shots/tv.png?raw=true)
+  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/search.jpg?raw=true)      
+  
+  for more screen shots visit rickandMorty-GameofThrones-bloc/screen_shots
   
