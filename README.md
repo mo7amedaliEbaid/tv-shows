@@ -5,15 +5,17 @@ based on free apis ,
 I used cubit ,blocprovider,flutter_offline packages  
 
 
-# For An Apk.
+## For An Apk.
+ 
+ https://drive.google.com/drive/folders/1hIjvxJRVjdr-YqEmnQKGuHPVjJAXe_So  
+ 
 
-
-# Used Packages.
+## Used Packages.
   dio: ^4.0.0    
   flutter_bloc: ^7.0.1    
   flutter_offline: ^2.0.0   
   
-  # ScreenShots.
+  ## ScreenShots.
   
   ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/got.jpg?raw=true)
   
