@@ -95,9 +95,12 @@ class RAMCharactersDetailsScreen extends StatelessWidget {
                           SizedBox(
                             width: 30,
                           ),
-                          Text(
-                            ramcharacter.created!,
-                            style: hintstyle,
+                          Container(
+                          width: 200,
+                            child: Text(
+                              ramcharacter.created!,
+                              style: hintstyle,
+                            ),
                           )
                         ],
                       ),
@@ -135,9 +138,12 @@ class RAMCharactersDetailsScreen extends StatelessWidget {
                           SizedBox(
                             width: 30,
                           ),
-                          Text(
-                            ramcharacter.location?.name ?? "",
-                            style: hintstyle,
+                          Container(
+                            width: 230,
+                            child: Text(
+                              ramcharacter.location?.name ?? "",
+                              style: hintstyle,
+                            ),
                           )
                         ],
                       ),
