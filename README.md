@@ -10,8 +10,7 @@ I used cubit ,blocprovider,flutter_offline packages
   
   # ScreenShots.
   
-  ![alt text](https://github.com/mo7amedaliEbaid/
-RickandMorty-GameofThrones-Bloc/rickandMorty-GameofThrones-bloc/blob/master/screen_shots/got.jpg?raw=true)
+  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/rickandMorty-GameofThrones-bloc/blob/master/screen_shots/got.jpg?raw=true)
   
   
   ![alt text](https://github.com/mo7amedaliEbaid/movies_app_flutter/blob/master/screen_shots/genres.png?raw=true)
