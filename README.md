@@ -1,8 +1,13 @@
-# RickandMorty-GameofThrones-Bloc.
+# TV Shows.
 A Flutter app for( rick and morty) and (game of thrones) series,  
 you can browse and search characters,   
 based on free apis ,   
-I used cubit ,blocprovider,flutter_offline packages
+I used cubit ,blocprovider,flutter_offline packages  
+
+
+# For An Apk.
+
+https://drive.google.com/drive/folders/18ynWLCZXCZMz5oJ0nlY2RrFTps6mBaNt
 # Used Packages.
   dio: ^4.0.0    
   flutter_bloc: ^7.0.1    
