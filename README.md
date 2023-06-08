@@ -7,7 +7,6 @@ I used cubit ,blocprovider,flutter_offline packages
 
 # For An Apk.
 
-https://drive.google.com/drive/folders/1oZTV0_5rA0wUt73sB1VlgAJEOCq-7XI8   
 
 # Used Packages.
   dio: ^4.0.0    
