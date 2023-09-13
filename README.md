@@ -11,16 +11,16 @@ I used cubit,blocprovider and flutter_offline package.
  
 
 ## Used Packages.
-  dio: ^4.0.0    
-  flutter_bloc: ^7.0.1    
-  flutter_offline: ^2.0.0   
+  dio:   
+  flutter_bloc:     
+  flutter_offline:   
   
   ## ScreenShots.
   
-  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/got.jpg?raw=true)
+
   
   
-  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/offline_wide.jpg?raw=true)
+  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/offline_wide.jpg?width=200)
   
   
  ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/char3.jpg?raw=true)
@@ -28,5 +28,5 @@ I used cubit,blocprovider and flutter_offline package.
   
   ![alt text](https://github.com/mo7amedaliEbaid/RickandMorty-GameofThrones-Bloc/blob/master/rickandMorty-GameofThrones-bloc/screen_shots/search.jpg?raw=true)      
   
-  for more screen shots visit rickandMorty-GameofThrones-bloc/screen_shots
+
   
