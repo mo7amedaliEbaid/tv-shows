@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:breakingbad/data/repositories/ram_charactersrepository.dart';
 import 'package:meta/meta.dart';
 
-import '../data/models/ram_characters_model.dart';
+import '../../data/models/ram_characters_model.dart';
 
 part 'ram_characters_state.dart';
 

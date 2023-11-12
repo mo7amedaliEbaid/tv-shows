@@ -1,7 +1,7 @@
 import 'package:breakingbad/data/models/ram_characters_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
+import '../../shared/constants.dart';
 
 class RAMCharactersDetailsScreen extends StatelessWidget {
   final RAMCharacter ramcharacter;

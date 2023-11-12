@@ -1,7 +1,7 @@
 import 'package:breakingbad/data/models/got_character_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
+import '../../shared/constants.dart';
 
 class GotCharactersDetailsScreen extends StatelessWidget {
   final GOTCharacter gotcharacter;

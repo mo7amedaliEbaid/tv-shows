@@ -1,10 +1,10 @@
-import 'package:breakingbad/business-logic/ram_characters_cubit.dart';
+import 'package:breakingbad/application/ram_cubit/ram_characters_cubit.dart';
 import 'package:breakingbad/presentation/widgets/ramcharacter_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 
-import '../../constants/constants.dart';
+import '../../shared/constants.dart';
 import '../../data/models/ram_characters_model.dart';
 import '../widgets/appbar_title.dart';
 import '../widgets/loading.dart';

@@ -1,23 +1,25 @@
-import 'package:breakingbad/constants/constants.dart';
+import 'package:breakingbad/shared/constants.dart';
 import 'package:dio/dio.dart';
 
-class GOTCharactersWebServices{
-  Dio dio=Dio();
-  GOTCharactersWebServices(){
-    BaseOptions options =BaseOptions(
+class GOTCharactersWebServices {
+  Dio dio = Dio();
+
+  GOTCharactersWebServices() {
+    BaseOptions options = BaseOptions(
       baseUrl: GOTbaseurl,
       receiveDataWhenStatusError: true,
-      connectTimeout: 20*1000,
-      receiveTimeout: 20*1000,
+      connectTimeout: 20 * 1000,
+      receiveTimeout: 20 * 1000,
     );
-    dio=Dio(options);
+    dio = Dio(options);
   }
-  Future<List<dynamic>> getAllGOTCharacters()async{
-    try{
-      Response response= await dio.get(allGOTcharacters);
+
+  Future<List<dynamic>> getAllGOTCharacters() async {
+    try {
+      Response response = await dio.get(allGOTcharacters);
       print(response.data.toString());
       return response.data;
-    }catch(e){
+    } catch (e) {
       print(e.toString());
       return [];
     }
