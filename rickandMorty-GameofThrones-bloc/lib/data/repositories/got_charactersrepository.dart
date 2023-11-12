@@ -1,5 +1,5 @@
-import 'package:breakingbad/data/models/got_character_model.dart';
-import 'package:breakingbad/data/web_services/gotwebServices.dart';
+import 'package:tvshows/data/models/got_character_model.dart';
+import 'package:tvshows/data/web_services/gotwebServices.dart';
 
 class GOTCharactersRepository{
   final GOTCharactersWebServices charactersWebServices;

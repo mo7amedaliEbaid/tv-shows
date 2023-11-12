@@ -1,5 +1,5 @@
-import 'package:breakingbad/shared/bloc_observer.dart';
-import 'package:breakingbad/shared/router.dart';
+import 'package:tvshows/shared/bloc_observer.dart';
+import 'package:tvshows/shared/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,4 +1,4 @@
-import 'package:breakingbad/data/web_services/ram_charactersWebServices.dart';
+import 'package:tvshows/data/web_services/ram_charactersWebServices.dart';
 
 import '../models/ram_characters_model.dart';
 

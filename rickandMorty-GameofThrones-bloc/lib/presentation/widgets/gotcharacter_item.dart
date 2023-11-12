@@ -1,5 +1,5 @@
-import 'package:breakingbad/data/models/got_character_model.dart';
-import 'package:breakingbad/presentation/screens/got_character_details.dart';
+import 'package:tvshows/data/models/got_character_model.dart';
+import 'package:tvshows/presentation/screens/got_character_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

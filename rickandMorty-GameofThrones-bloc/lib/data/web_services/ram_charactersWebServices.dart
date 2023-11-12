@@ -1,4 +1,4 @@
-import 'package:breakingbad/shared/constants.dart';
+import 'package:tvshows/shared/constants.dart';
 import 'package:dio/dio.dart';
 
 class RAMCharactersWebServices {

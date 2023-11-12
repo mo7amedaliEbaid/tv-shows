@@ -1,5 +1,5 @@
-import 'package:breakingbad/shared/constants.dart';
-import 'package:breakingbad/data/models/got_character_model.dart';
+import 'package:tvshows/shared/constants.dart';
+import 'package:tvshows/data/models/got_character_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_offline/flutter_offline.dart';

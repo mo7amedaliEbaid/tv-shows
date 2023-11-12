@@ -11,7 +11,7 @@ A Flutter app for( rick and morty) and (game of thrones) characters
    
 ### ScreenShots.
 
-Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/tv-shows/blob/e47c681f550db849efd61e25892c924762cbcfe1/rickandMorty-GameofThrones-bloc/screen_shots)
+Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/tv-shows/blob/96921fa45a56af45394c8222a284273ec2c3ad50/rickandMorty-GameofThrones-bloc/screen_shots)
 <br />
 <p float="left">
 

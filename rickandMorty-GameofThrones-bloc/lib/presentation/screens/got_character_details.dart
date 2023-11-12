@@ -1,4 +1,4 @@
-import 'package:breakingbad/data/models/got_character_model.dart';
+import 'package:tvshows/data/models/got_character_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/constants.dart';

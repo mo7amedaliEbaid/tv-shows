@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:breakingbad/data/repositories/ram_charactersrepository.dart';
+import 'package:tvshows/data/repositories/ram_charactersrepository.dart';
 import 'package:meta/meta.dart';
 
 import '../../data/models/ram_characters_model.dart';
